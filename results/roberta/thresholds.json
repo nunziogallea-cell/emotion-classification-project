@@ -1,0 +1,13 @@
+{
+    "anger": 0.29,
+    "anticipation": 0.21,
+    "disgust": 0.47,
+    "fear": 0.58,
+    "joy": 0.17,
+    "love": 0.17,
+    "optimism": 0.27,
+    "pessimism": 0.41,
+    "sadness": 0.45,
+    "surprise": 0.16,
+    "trust": 0.17
+}

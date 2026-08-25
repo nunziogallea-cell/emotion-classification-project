@@ -1,0 +1,3 @@
+Model,Baseline Micro-F1,Baseline Macro-F1,Optimized Micro-F1,Optimized Macro-F1
+BERT,0.6945,0.504,0.6862,0.587
+RoBERTa,0.7077,0.5282,0.7042,0.5875
