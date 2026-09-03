@@ -164,9 +164,9 @@ def main():
         model=model
     )
 
-    # --------------------------------------------------
-    # VALIDATION
-    # --------------------------------------------------
+    
+    #VALIDATION
+    
 
     print("Evaluating validation set...")
 
@@ -208,9 +208,9 @@ def main():
             f"{best_thresholds[emotion]:.2f}"
         )
 
-    # --------------------------------------------------
-    # TEST
-    # --------------------------------------------------
+    
+    #TEST
+    
 
     print()
     print("Evaluating test set...")
@@ -249,9 +249,9 @@ def main():
         "TEST - OPTIMIZED THRESHOLDS",
     )
 
-    # --------------------------------------------------
-    # CLASSIFICATION REPORTS
-    # --------------------------------------------------
+    
+    #CLASSIFICATION REPORTS
+    
 
     baseline_report = classification_report(
         test_labels,
@@ -295,9 +295,9 @@ def main():
     ) as f:
         f.write(optimized_report)
 
-    # --------------------------------------------------
-    # SAVE THRESHOLDS
-    # --------------------------------------------------
+
+    #SAVE THRESHOLDS
+    
 
     thresholds_path = os.path.join(
         args.results_dir,
@@ -315,9 +315,9 @@ def main():
             indent=4,
         )
 
-    # --------------------------------------------------
-    # SAVE SUMMARY
-    # --------------------------------------------------
+    
+    #SAVE SUMMARY
+    
 
     summary = {
         "baseline": {
