@@ -12,9 +12,9 @@ from src.utils import compute_metrics
 
 def main():
 
-    # --------------------------------------------------
-    # ARGUMENTS
-    # --------------------------------------------------
+    
+    #ARGUMENTS
+    
 
     parser = argparse.ArgumentParser()
 
@@ -35,9 +35,9 @@ def main():
 
     print(f"Training model: {args.model}")
 
-    # --------------------------------------------------
-    # DEVICE
-    # --------------------------------------------------
+    
+    #DEVICE
+    
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -47,9 +47,9 @@ def main():
         print(f"GPU: {torch.cuda.get_device_name(0)}")
         print(f"CUDA version: {torch.version.cuda}")
 
-    # --------------------------------------------------
-    # MODEL
-    # --------------------------------------------------
+    
+    #MODEL
+    
 
     print("Loading pretrained model...")
 
@@ -57,9 +57,9 @@ def main():
 
     print("Model loaded.")
 
-    # --------------------------------------------------
-    # DATASET
-    # --------------------------------------------------
+    
+    #DATASET
+    
 
     print("Loading dataset...")
 
@@ -71,9 +71,9 @@ def main():
     print("Dataset loaded.")
     print(dataset)
 
-    # --------------------------------------------------
-    # QUICK MODE
-    # --------------------------------------------------
+    
+    #QUICK MODE
+    
 
     if args.quick:
 
@@ -107,9 +107,9 @@ def main():
         print(f"Validation samples: {len(dataset['validation'])}")
         print(f"Test samples: {len(dataset['test'])}")
 
-    # --------------------------------------------------
-    # OUTPUT DIRECTORY
-    # --------------------------------------------------
+    
+    #OUTPUT DIRECTORY
+    
 
     output_dir = os.path.join(
         "models",
@@ -118,9 +118,8 @@ def main():
 
     os.makedirs(output_dir, exist_ok=True)
 
-    # --------------------------------------------------
-    # TRAINING ARGUMENTS
-    # --------------------------------------------------
+    
+    #TRAINING ARGUMENTS
 
     training_args = TrainingArguments(
 
@@ -152,9 +151,9 @@ def main():
         save_total_limit=1,
     )
 
-    # --------------------------------------------------
-    # TRAINER
-    # --------------------------------------------------
+    
+    #TRAINER
+    
 
     trainer = Trainer(
 
@@ -169,9 +168,9 @@ def main():
         compute_metrics=compute_metrics,
     )
 
-    # --------------------------------------------------
-    # TRAIN
-    # --------------------------------------------------
+    
+    #TRAIN
+    
 
     print()
     print("Starting training...")
@@ -179,9 +178,9 @@ def main():
 
     trainer.train()
 
-    # --------------------------------------------------
-    # TEST
-    # --------------------------------------------------
+
+    #TEST
+
 
     print()
     print("Evaluating on test set...")
@@ -196,9 +195,9 @@ def main():
     for key, value in test_results.items():
         print(f"{key}: {value}")
 
-    # --------------------------------------------------
-    # SAVE
-    # --------------------------------------------------
+    
+    #SAVE
+    
 
     print()
     print("Saving model...")
